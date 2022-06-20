@@ -10,6 +10,7 @@ import (
 
 func main() {
 	r := csv.NewReader(os.Stdin)
+	r.FieldsPerRecord = -1
 	var indexColumn = flag.String("i", "", "indexColumn column")
 	flag.Parse()
 

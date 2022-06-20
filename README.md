@@ -16,7 +16,7 @@ Ken,Thompson,ken
 ^D
 ```
 
-csv2 expands the content 
+csv2 expands the contents into a flat structure and makes it easy to grep. 
 
 ```
 $ ./csv2  < ~/test.csv 
@@ -31,10 +31,10 @@ $ ./csv2  < ~/test.csv
 /2/username = gri
 ```
 
-You can give a column index name (`username`):
+You can search by specific content instead of sequential numbering by giving the "index" column name (`username`):
 
 ```
-$ ./csv2 -i username < test.csv 
+$ ./csv2 -i username < test.csv
 /rob/first_name = Rob
 /rob/last_name = Pike
 /rob/username = rob
@@ -46,7 +46,7 @@ $ ./csv2 -i username < test.csv
 /gri/username = gri
 ```
 
-Search by meaningful column and id name
+You can search by meaningful value specified by index:
 
 ```
 $ ./csv2 -i username < test.csv | grep /ken | grep last_name
